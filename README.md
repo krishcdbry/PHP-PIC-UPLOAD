@@ -38,9 +38,11 @@ upload_img.php
   The main block which moves the image and which stores the name in database.	
 	
   if(move_uploaded_file($t,$path.$new_name)){
+  
 	    mysql_query("INSERT INTO image VALUES('','$new_name')");
 		echo "Successfully uploaded <br><br>";
 		echo "<img src=upload/".$new_name." height=400px>";
+		
 	}
 	
 	
