@@ -1,7 +1,19 @@
 <?php 
 mysql_connect("localhost","root","") or die(mysql_error());
 mysql_select_db("db1") or die(mysql_error());  // Let your database will be db1
+?>
 
+<h1> UPLOAD IMAGE </h1>
+<br><br>
+
+<form name="myform" method="POST" action="upload_img.php" enctype="multipart/form-data">
+<input type='file' name='image'>
+<input type='submit' name='upload'>
+</form>
+
+
+
+<?php
 if(isSet($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
     
 	 $k = $_FILES['image']['name'];
@@ -34,3 +46,4 @@ else{
 }
 
 ?>
+</center>
